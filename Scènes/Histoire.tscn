@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=13 format=2]
 
 [sub_resource type="Gradient" id=1]
 
@@ -13,7 +13,110 @@ width = 241
 
 [sub_resource type="GDScript" id=3]
 
+script/source = "extends Label
+
+# class member variables go here, for example:
+# var a = 2
+# var b = \"textvar\"
+
+func _ready():
+	self.text = tr(\"HISTORY_TITLE\")"
+
+[sub_resource type="GDScript" id=5]
+
+script/source = "extends Label
+
+# class member variables go here, for example:
+# var a = 2
+# var b = \"textvar\"
+
+func _ready():
+	self.text = tr(\"HISTORY_L1\")"
+
+[sub_resource type="GDScript" id=6]
+
+script/source = "extends Label
+
+# class member variables go here, for example:
+# var a = 2
+# var b = \"textvar\"
+
+func _ready():
+	self.text = tr(\"HISTORY_L2\")"
+
+[sub_resource type="GDScript" id=7]
+
+script/source = "extends Label
+
+# class member variables go here, for example:
+# var a = 2
+# var b = \"textvar\"
+
+func _ready():
+	self.text = tr(\"HISTORY_L3\")
+"
+
+[sub_resource type="GDScript" id=8]
+
+script/source = "extends Label
+
+# class member variables go here, for example:
+# var a = 2
+# var b = \"textvar\"
+
+func _ready():
+	self.text = tr(\"HISTORY_L4\")"
+
+[sub_resource type="GDScript" id=9]
+
+script/source = "extends Label
+
+# class member variables go here, for example:
+# var a = 2
+# var b = \"textvar\"
+
+func _ready():
+	self.text = tr(\"CONTROLES_L1\")"
+
+[sub_resource type="GDScript" id=10]
+
+script/source = "extends Label
+
+# class member variables go here, for example:
+# var a = 2
+# var b = \"textvar\"
+
+func _ready():
+	self.text = tr(\"CONTROLES_L2\")"
+
+[sub_resource type="GDScript" id=11]
+
+script/source = "extends Label
+
+# class member variables go here, for example:
+# var a = 2
+# var b = \"textvar\"
+
+func _ready():
+	self.text = tr(\"CONTROLES_L3\")"
+
+[sub_resource type="GDScript" id=12]
+
+script/source = "extends Label
+
+# class member variables go here, for example:
+# var a = 2
+# var b = \"textvar\"
+
+func _ready():
+	self.text = tr(\"CONTROLES_L4\")"
+
+[sub_resource type="GDScript" id=4]
+
 script/source = "extends Button
+
+func _ready():
+	self.text = tr(\"PLAY_BUTTON\")
 
 
 func _on_PlayButton_pressed():
@@ -50,6 +153,7 @@ uppercase = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+script = SubResource( 3 )
 _sections_unfolded = [ "Rect" ]
 
 [node name="Label" type="Label" parent="." index="2"]
@@ -73,6 +177,7 @@ text = "Sheriff, vous êtes nôtre dernier espoir !"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+script = SubResource( 5 )
 _sections_unfolded = [ "Rect" ]
 
 [node name="Label" type="Label" parent="Label" index="0"]
@@ -95,6 +200,7 @@ text = "Un groupe de brigands ont pillé notre ville !"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+script = SubResource( 6 )
 
 [node name="Label2" type="Label" parent="Label" index="1"]
 
@@ -116,6 +222,7 @@ text = "Vous seul pouvez aller recherche notre or !"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+script = SubResource( 7 )
 
 [node name="Label3" type="Label" parent="Label" index="2"]
 
@@ -137,6 +244,7 @@ text = "Je vous en prie !"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+script = SubResource( 8 )
 
 [node name="Label2" type="Label" parent="." index="3"]
 
@@ -159,6 +267,7 @@ text = "Contrôles :"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+script = SubResource( 9 )
 _sections_unfolded = [ "Rect" ]
 
 [node name="Label" type="Label" parent="Label2" index="0"]
@@ -169,7 +278,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = -66.0
 margin_top = 21.0
-margin_right = 144.0
+margin_right = 146.0
 margin_bottom = 35.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -181,6 +290,7 @@ text = "- ZQSD - Flèches : Déplacements"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+script = SubResource( 10 )
 
 [node name="Label2" type="Label" parent="Label2" index="1"]
 
@@ -202,6 +312,7 @@ text = "- Clic gauche : Tirer"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+script = SubResource( 11 )
 
 [node name="Label3" type="Label" parent="Label2" index="2"]
 
@@ -209,9 +320,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -15.0
+margin_left = -14.0
 margin_top = 59.0
-margin_right = 77.0
+margin_right = 78.0
 margin_bottom = 73.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -223,6 +334,7 @@ text = "- R : Recharger"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+script = SubResource( 12 )
 
 [node name="PlayButton" type="Button" parent="." index="4"]
 
@@ -249,7 +361,7 @@ group = null
 text = "Jouer"
 flat = false
 align = 1
-script = SubResource( 3 )
+script = SubResource( 4 )
 _sections_unfolded = [ "Rect" ]
 
 [connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_PlayButton_pressed"]

@@ -1,0 +1,19 @@
+,fr,en
+PLAY_BUTTON,Jouer,Play
+OPTION_BUTTON,Options,Options
+EXIT_BUTTON,Quitter,Exit
+BACK_BUTTON,Retour,Back
+LANGUAGE_LABEL,Langue,Language
+HISTORY_TITLE,HISTOIRE,HISTORY
+HISTORY_L1,"Sheriff, vous êtes notre dernier espoir !","Sheriff, you are our last hope!"
+HISTORY_L2,Un groupe de brigands ont pillé la ville !,A group of robbers looted the city!
+HISTORY_L3,Vous seul pouvez récupérer notre or.,Only you can recover our gold.
+HISTORY_L4,Nous vous en supplions !,We beg you!
+CONTROLES_L1,Contrôles :,Controls :
+CONTROLES_L2,- ZQSD - Flèches : Déplacements,- ZQSD - Arrows: Movements
+CONTROLES_L3,- Clic gauche : Tirer,- Left click: Shoot
+CONTROLES_L4,- R : Recharger,- R: Reload
+PAUSE_LABEL,PAUSE,PAUSE
+RELOAD_LABEL,Recharge !,Reload !
+RETRY_BUTTON,Rejouer,Replay
+MENU_BUTTON,Menu Principal,Main Menu

@@ -55,6 +55,10 @@ reload=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":""
 Pause=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":80,"unicode":0,"echo":false,"script":null)
  ]
 
+[locale]
+
+translations=PoolStringArray( "res://Langages/translate.fr.translation", "res://Langages/translate.en.translation" )
+
 [rendering]
 
 environment/default_clear_color=Color( 0.251236, 0.68951, 0.722656, 1 )

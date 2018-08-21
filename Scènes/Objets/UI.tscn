@@ -21,12 +21,12 @@ var timer = 0
 
 func _process(delta):
 	if global.playerBall == 1:
-		self.text = \"Recharge\"
+		self.text = tr(\"RELOAD_LABEL\")
 	elif global.playerBall == 0:
 		if timer < 0:
 			timer = 20
 			if self.text == \"\":
-				self.text = \"Recharge\"
+				self.text = tr(\"RELOAD_LABEL\")
 			else:
 				self.text = \"\"
 	else:
@@ -52,6 +52,7 @@ script/source = "extends Label
 var pause = false
 
 func _ready():
+	self.text = tr(\"PAUSE_LABEL\")
 	hide()
 
 func _physics_process(delta):

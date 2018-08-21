@@ -6,20 +6,23 @@
 
 script/source = "extends Button
 
-func _on_ReplayButton_pressed():
-	get_tree().change_scene(\"res://Scènes/Main.tscn\")
-"
+func _ready():
+	self.text = tr(\"RETRY_BUTTON\")
+
+func _on_RetryButton_pressed():
+	get_tree().change_scene(\"res://Scènes/Niveaux/L1.tscn\")"
 
 [sub_resource type="GDScript" id=2]
 
 script/source = "extends Button
 
-
+func _ready():
+	self.text = tr(\"MENU_BUTTON\")
+	
 func _on_ExitButton_pressed():
-	get_tree().quit()
-"
+	get_tree().change_scene(\"res://Scènes/Main.tscn\")"
 
-[node name="Node" type="Node"]
+[node name="Node" type="Node" index="0"]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
