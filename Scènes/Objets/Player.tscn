@@ -1,0 +1,152 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Cowboy 4 HiRes/Cowboy4_idle with gun_0.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Cowboy 4 HiRes/Cowboy4_idle with gun_1.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Cowboy 4 HiRes/Cowboy4_idle with gun_2.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Cowboy 4 HiRes/Cowboy4_idle with gun_3.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Cowboy 4 HiRes/Cowboy4_walk with gun_0.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Cowboy 4 HiRes/Cowboy4_walk with gun_1.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Cowboy 4 HiRes/Cowboy4_walk with gun_2.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Cowboy 4 HiRes/Cowboy4_walk with gun_3.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Cowboy 4 HiRes/Cowboy4_jumo with gun_0.png" type="Texture" id=10]
+[ext_resource path="res://Sounds/Shots/shotNormal.wav" type="AudioStream" id=11]
+[ext_resource path="res://Sounds/Shots/ReloadNormal.wav" type="AudioStream" id=12]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+
+animations = [ {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=4]
+
+custom_solver_bias = 0.0
+radius = 17.959
+height = 35.5872
+
+[sub_resource type="RectangleShape2D" id=5]
+
+custom_solver_bias = 0.0
+extents = Vector2( 19.1979, 1.92926 )
+
+[node name="KinematicBody2D" type="RigidBody2D" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+mode = 2
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 128.0
+custom_integrator = true
+continuous_cd = 0
+contacts_reported = 2
+contact_monitor = true
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+script = ExtResource( 1 )
+
+[node name="SpriteIDLE" type="AnimatedSprite" parent="." index="0"]
+
+position = Vector2( 5.21962, -2.38496 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 1 )
+animation = "default"
+frame = 1
+playing = true
+_sections_unfolded = [ "Animation", "Transform" ]
+
+[node name="SpriteRUN" type="AnimatedSprite" parent="." index="1"]
+
+visible = false
+position = Vector2( 5.14196, 0.441635 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 2 )
+animation = "default"
+frame = 2
+playing = true
+_sections_unfolded = [ "Transform" ]
+
+[node name="SpriteJUMP" type="AnimatedSprite" parent="." index="2"]
+
+visible = false
+position = Vector2( 5.25583, -0.583984 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 3 )
+animation = "default"
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
+
+position = Vector2( -3.09473, -1.93486 )
+shape = SubResource( 4 )
+_sections_unfolded = [ "Material", "Visibility" ]
+
+[node name="ShootSound" type="AudioStreamPlayer" parent="." index="4"]
+
+stream = ExtResource( 11 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+_sections_unfolded = [ "Pause" ]
+
+[node name="ReloadSound" type="AudioStreamPlayer" parent="." index="5"]
+
+stream = ExtResource( 12 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="GroundChecker" type="Area2D" parent="." index="6"]
+
+position = Vector2( -0.0852585, 0 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 0.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Audio Bus", "Collision", "Pickable" ]
+
+[node name="GroundCollision" type="CollisionShape2D" parent="GroundChecker" index="0"]
+
+position = Vector2( -3.27721, 36.5234 )
+shape = SubResource( 5 )
+
+[connection signal="body_entered" from="GroundChecker" to="." method="_on_GroundChecker_body_entered"]
+
+[connection signal="body_exited" from="GroundChecker" to="." method="_on_GroundChecker_body_exited"]
+
+

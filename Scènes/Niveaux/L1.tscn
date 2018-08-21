@@ -1,0 +1,103 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scripts/L1.gd" type="Script" id=1]
+[ext_resource path="res://Scènes/Objets/UI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scènes/Objets/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scènes/Objets/Ennemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scènes/Objets/Caisse.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Sprites/Platform/platformTerre.tres" type="TileSet" id=6]
+[ext_resource path="res://Scènes/Objets/Treasure.tscn" type="PackedScene" id=7]
+
+[node name="Node" type="Node"]
+
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+
+[node name="UI" parent="." index="0" instance=ExtResource( 2 )]
+
+[node name="Camera2D" type="Camera2D" parent="." index="1"]
+
+position = Vector2( 527.224, 339.548 )
+scale = Vector2( 1.06461, 0.699358 )
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 0.85, 0.85 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = true
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false
+smoothing_enabled = true
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+_sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Offset", "Smoothing" ]
+
+[node name="Player" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 59.4056, 562.36 )
+_sections_unfolded = [ "Angular", "Linear", "Transform", "collision" ]
+
+[node name="Ennemies" type="Node2D" parent="." index="3"]
+
+[node name="Ennemy" parent="Ennemies" index="0" instance=ExtResource( 4 )]
+
+position = Vector2( 2435.43, 543.508 )
+
+[node name="Caisses" type="Node2D" parent="." index="4"]
+
+[node name="Caisse" parent="Caisses" index="0" instance=ExtResource( 5 )]
+
+position = Vector2( 901.902, 544.481 )
+
+[node name="Caisse2" parent="Caisses" index="1" instance=ExtResource( 5 )]
+
+position = Vector2( 1748.06, 543.121 )
+
+[node name="Caisse3" parent="Caisses" index="2" instance=ExtResource( 5 )]
+
+position = Vector2( 2287.28, 536.798 )
+
+[node name="Platforms" type="TileMap" parent="." index="5"]
+
+scale = Vector2( 2, 2 )
+mode = 0
+tile_set = ExtResource( 6 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 589832, 0, 0, 589833, 1, 0, 589834, 1, 0, 589835, 1, 0, 589836, 1, 0, 589837, 1, 0, 589838, 1, 0, 589839, 2, 0, 589841, 3, 0, 589843, 3, 0, 589845, 0, 0, 589846, 1, 0, 589847, 1, 0, 589848, 1, 0, 589849, 1, 0, 589850, 1, 0, 589851, 2, 0, 589854, 0, 0, 589855, 1, 0, 589856, 1, 0, 589857, 2, 0, 589859, 0, 0, 589860, 1, 0, 589861, 1, 0, 589862, 1, 0, 589863, 1, 0, 589864, 1, 0, 589865, 1, 0, 589866, 1, 0, 589867, 2, 0, 589869, 3, 0, 655360, 0, 0, 655361, 1, 0, 655362, 1, 0, 655363, 1, 0, 655364, 1, 0, 655365, 1, 0, 655366, 2, 0 )
+_sections_unfolded = [ "Cell", "Transform" ]
+
+[node name="Treasure" parent="." index="6" instance=ExtResource( 7 )]
+
+position = Vector2( 2895.78, 548.019 )
+
+[node name="Minimum" type="Node2D" parent="." index="7"]
+
+position = Vector2( 39.0533, 689.011 )
+
+

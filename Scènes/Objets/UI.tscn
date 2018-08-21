@@ -1,0 +1,182 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Sprites/Backgrounds/Desert.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Bullets/bullet1.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Bars/fond.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Bars/fill.png" type="Texture" id=4]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Label
+
+func _process(delta):
+	self.text = str(global.playerBall)
+"
+
+[sub_resource type="GDScript" id=2]
+
+script/source = "extends Label
+
+var timer = 0
+
+func _process(delta):
+	if global.playerBall == 1:
+		self.text = \"Recharge\"
+	elif global.playerBall == 0:
+		if timer < 0:
+			timer = 20
+			if self.text == \"\":
+				self.text = \"Recharge\"
+			else:
+				self.text = \"\"
+	else:
+		self.text = \"\"
+	timer -= 1
+"
+
+[sub_resource type="GDScript" id=3]
+
+script/source = "extends Sprite
+
+var scaleX = self.scale.x
+var pos = self.position
+
+func _process(delta):
+	self.position = pos
+	self.scale = Vector2(scaleX * global.playerLife/100, self.scale.y )"
+
+[sub_resource type="GDScript" id=4]
+
+script/source = "extends Label
+
+var pause = false
+
+func _ready():
+	hide()
+
+func _physics_process(delta):
+	var pausekey = Input.is_action_just_pressed(\"Pause\")
+	
+	if pausekey:
+		if pause:
+			hide()
+			get_tree().set_pause(false)
+			pause = false
+		else:
+			show()
+			get_tree().set_pause(true)
+			pause = true"
+
+[node name="UI" type="Node2D"]
+
+position = Vector2( -0.128513, -0.128513 )
+scale = Vector2( 1.2, 1.2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+position = Vector2( -62.9385, -73.4283 )
+scale = Vector2( 0.65, 0.65 )
+texture = ExtResource( 1 )
+centered = false
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="MunitionsSprite" type="Sprite" parent="." index="1"]
+
+position = Vector2( 26.0381, 49.996 )
+rotation = 1.57046
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MunitionsNumber" type="Label" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -12.0
+margin_top = 41.0
+margin_right = 28.0
+margin_bottom = 61.0
+rect_scale = Vector2( 1.5, 1.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "6"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script = SubResource( 1 )
+_sections_unfolded = [ "Anchor", "Grow Direction", "Hint", "Margin", "Rect", "Size Flags", "custom_styles" ]
+
+[node name="MunitionsRecharge" type="Label" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 52.0
+margin_top = 41.0
+margin_right = 110.0
+margin_bottom = 55.0
+rect_scale = Vector2( 1.5, 1.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Recharge"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script = SubResource( 2 )
+_sections_unfolded = [ "Rect", "custom_colors" ]
+
+[node name="BarBackground" type="Sprite" parent="." index="4"]
+
+position = Vector2( 54.6983, 20.2092 )
+scale = Vector2( 1.25, 1 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BarFiller" type="Sprite" parent="." index="5"]
+
+position = Vector2( -7.93738, 10.3946 )
+scale = Vector2( 1.25, 1 )
+texture = ExtResource( 4 )
+centered = false
+script = SubResource( 3 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="Pause" type="Label" parent="." index="6"]
+
+pause_mode = 2
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 305.0
+margin_top = 214.0
+margin_right = 346.0
+margin_bottom = 228.0
+rect_scale = Vector2( 5, 5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "pause"
+uppercase = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script = SubResource( 4 )
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
+
+
