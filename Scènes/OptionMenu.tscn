@@ -37,6 +37,7 @@ script/source = "extends Button
 func _on_FRButton_pressed():
 	TranslationServer.set_locale(\"fr\")
 	get_tree().change_scene(\"res://Scènes/OptionMenu.tscn\")
+	global.saveOption()
 "
 
 [sub_resource type="GDScript" id=4]
@@ -46,6 +47,7 @@ script/source = "extends Button
 func _on_ENButton_pressed():
 	TranslationServer.set_locale(\"en\")
 	get_tree().change_scene(\"res://Scènes/OptionMenu.tscn\")
+	global.saveOption()
 "
 
 [node name="OptionMenu" type="Node2D"]
