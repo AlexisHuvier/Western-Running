@@ -1,4 +1,6 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Police/Fool.tres" type="DynamicFont" id=1]
 
 [sub_resource type="Gradient" id=1]
 
@@ -22,7 +24,7 @@ script/source = "extends Label
 func _ready():
 	self.text = tr(\"HISTORY_TITLE\")"
 
-[sub_resource type="GDScript" id=5]
+[sub_resource type="GDScript" id=4]
 
 script/source = "extends Label
 
@@ -33,7 +35,7 @@ script/source = "extends Label
 func _ready():
 	self.text = tr(\"HISTORY_L1\")"
 
-[sub_resource type="GDScript" id=6]
+[sub_resource type="GDScript" id=5]
 
 script/source = "extends Label
 
@@ -44,7 +46,7 @@ script/source = "extends Label
 func _ready():
 	self.text = tr(\"HISTORY_L2\")"
 
-[sub_resource type="GDScript" id=7]
+[sub_resource type="GDScript" id=6]
 
 script/source = "extends Label
 
@@ -56,7 +58,7 @@ func _ready():
 	self.text = tr(\"HISTORY_L3\")
 "
 
-[sub_resource type="GDScript" id=8]
+[sub_resource type="GDScript" id=7]
 
 script/source = "extends Label
 
@@ -67,7 +69,7 @@ script/source = "extends Label
 func _ready():
 	self.text = tr(\"HISTORY_L4\")"
 
-[sub_resource type="GDScript" id=9]
+[sub_resource type="GDScript" id=8]
 
 script/source = "extends Label
 
@@ -78,7 +80,7 @@ script/source = "extends Label
 func _ready():
 	self.text = tr(\"CONTROLES_L1\")"
 
-[sub_resource type="GDScript" id=10]
+[sub_resource type="GDScript" id=9]
 
 script/source = "extends Label
 
@@ -89,7 +91,7 @@ script/source = "extends Label
 func _ready():
 	self.text = tr(\"CONTROLES_L2\")"
 
-[sub_resource type="GDScript" id=11]
+[sub_resource type="GDScript" id=10]
 
 script/source = "extends Label
 
@@ -100,7 +102,7 @@ script/source = "extends Label
 func _ready():
 	self.text = tr(\"CONTROLES_L3\")"
 
-[sub_resource type="GDScript" id=12]
+[sub_resource type="GDScript" id=11]
 
 script/source = "extends Label
 
@@ -111,7 +113,7 @@ script/source = "extends Label
 func _ready():
 	self.text = tr(\"CONTROLES_L4\")"
 
-[sub_resource type="GDScript" id=4]
+[sub_resource type="GDScript" id=12]
 
 script/source = "extends Button
 
@@ -148,13 +150,14 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
+custom_fonts/font = ExtResource( 1 )
 text = "Histoire"
 uppercase = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 script = SubResource( 3 )
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
 [node name="Label" type="Label" parent="." index="2"]
 
@@ -162,10 +165,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 290.0
-margin_top = 120.0
-margin_right = 540.0
-margin_bottom = 134.0
+margin_left = 245.0
+margin_top = 128.0
+margin_right = 544.0
+margin_bottom = 146.0
 rect_scale = Vector2( 3, 3 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -173,12 +176,13 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-text = "Sheriff, vous êtes nôtre dernier espoir !"
+custom_fonts/font = ExtResource( 1 )
+text = "Sheriff, vous êtes notre dernier espoir !"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script = SubResource( 5 )
-_sections_unfolded = [ "Rect" ]
+script = SubResource( 4 )
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
 [node name="Label" type="Label" parent="Label" index="0"]
 
@@ -186,21 +190,23 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -13.0
-margin_top = 20.0
-margin_right = 265.0
-margin_bottom = 34.0
+margin_left = -18.0
+margin_top = 22.0
+margin_right = 324.0
+margin_bottom = 40.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
+custom_fonts/font = ExtResource( 1 )
 text = "Un groupe de brigands ont pillé notre ville !"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script = SubResource( 6 )
+script = SubResource( 5 )
+_sections_unfolded = [ "custom_fonts" ]
 
 [node name="Label2" type="Label" parent="Label" index="1"]
 
@@ -208,21 +214,23 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -9.0
-margin_top = 44.0
-margin_right = 266.0
-margin_bottom = 58.0
+margin_left = -14.0
+margin_top = 46.0
+margin_right = 322.0
+margin_bottom = 64.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
+custom_fonts/font = ExtResource( 1 )
 text = "Vous seul pouvez aller recherche notre or !"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script = SubResource( 7 )
+script = SubResource( 6 )
+_sections_unfolded = [ "custom_fonts" ]
 
 [node name="Label3" type="Label" parent="Label" index="2"]
 
@@ -230,21 +238,23 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 74.0
-margin_top = 69.0
-margin_right = 176.0
-margin_bottom = 83.0
+margin_left = 69.0
+margin_top = 71.0
+margin_right = 196.0
+margin_bottom = 89.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
+custom_fonts/font = ExtResource( 1 )
 text = "Je vous en prie !"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script = SubResource( 8 )
+script = SubResource( 7 )
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
 [node name="Label2" type="Label" parent="." index="3"]
 
@@ -252,10 +262,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 567.0
-margin_top = 416.0
-margin_right = 636.0
-margin_bottom = 456.0
+margin_left = 540.0
+margin_top = 422.0
+margin_right = 621.0
+margin_bottom = 462.0
 rect_scale = Vector2( 3, 3 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -263,12 +273,13 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-text = "Contrôles :"
+custom_fonts/font = ExtResource( 1 )
+text = "Controles :"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script = SubResource( 9 )
-_sections_unfolded = [ "Rect" ]
+script = SubResource( 8 )
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
 [node name="Label" type="Label" parent="Label2" index="0"]
 
@@ -276,21 +287,23 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -66.0
-margin_top = 21.0
-margin_right = 146.0
-margin_bottom = 35.0
+margin_left = -75.0
+margin_top = 22.0
+margin_right = 170.0
+margin_bottom = 40.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-text = "- ZQSD - Flèches : Déplacements"
+custom_fonts/font = ExtResource( 1 )
+text = "- ZQSD - Fleches : Déplacements"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script = SubResource( 10 )
+script = SubResource( 9 )
+_sections_unfolded = [ "custom_fonts" ]
 
 [node name="Label2" type="Label" parent="Label2" index="1"]
 
@@ -298,21 +311,23 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -29.0
-margin_top = 39.0
-margin_right = 93.0
-margin_bottom = 53.0
+margin_left = -34.0
+margin_top = 43.0
+margin_right = 123.0
+margin_bottom = 61.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
+custom_fonts/font = ExtResource( 1 )
 text = "- Clic gauche : Tirer"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script = SubResource( 11 )
+script = SubResource( 10 )
+_sections_unfolded = [ "custom_fonts" ]
 
 [node name="Label3" type="Label" parent="Label2" index="2"]
 
@@ -320,21 +335,23 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -14.0
-margin_top = 59.0
-margin_right = 78.0
-margin_bottom = 73.0
+margin_left = -19.0
+margin_top = 62.0
+margin_right = 96.0
+margin_bottom = 80.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
+custom_fonts/font = ExtResource( 1 )
 text = "- R : Recharger"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script = SubResource( 12 )
+script = SubResource( 11 )
+_sections_unfolded = [ "custom_fonts" ]
 
 [node name="PlayButton" type="Button" parent="." index="4"]
 
@@ -354,6 +371,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_fonts/font = ExtResource( 1 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -361,8 +379,8 @@ group = null
 text = "Jouer"
 flat = false
 align = 1
-script = SubResource( 4 )
-_sections_unfolded = [ "Rect" ]
+script = SubResource( 12 )
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
 [connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_PlayButton_pressed"]
 

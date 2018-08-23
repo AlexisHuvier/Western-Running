@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Sprites/Menus/GameOver.png" type="Texture" id=1]
+[ext_resource path="res://Police/Fool.tres" type="DynamicFont" id=2]
 
 [sub_resource type="GDScript" id=1]
 
@@ -49,6 +50,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_fonts/font = ExtResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -57,7 +59,7 @@ text = "Rejouer"
 flat = false
 align = 1
 script = SubResource( 1 )
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
 [node name="ExitButton" type="Button" parent="." index="2"]
 
@@ -77,6 +79,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_fonts/font = ExtResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -85,7 +88,7 @@ text = "Quitter"
 flat = false
 align = 1
 script = SubResource( 2 )
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
 [connection signal="pressed" from="RetryButton" to="RetryButton" method="_on_RetryButton_pressed"]
 

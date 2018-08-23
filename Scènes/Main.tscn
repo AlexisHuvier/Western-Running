@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Sprites/Menus/Main.png" type="Texture" id=1]
+[ext_resource path="res://Police/Fool.tres" type="DynamicFont" id=2]
 
 [sub_resource type="GDScript" id=1]
 
@@ -49,7 +50,7 @@ func _on_OptionButton_pressed():
 	get_tree().change_scene(\"res://Scènes/OptionMenu.tscn\")
 "
 
-[node name="Node" type="Node" index="0"]
+[node name="Node" type="Node"]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
@@ -65,7 +66,7 @@ anchor_bottom = 0.0
 margin_left = 339.0
 margin_top = 275.0
 margin_right = 541.0
-margin_bottom = 309.0
+margin_bottom = 306.0
 rect_scale = Vector2( 3, 3 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -74,6 +75,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_fonts/font = ExtResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -82,7 +84,7 @@ text = "Jouer"
 flat = false
 align = 1
 script = SubResource( 1 )
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
 [node name="LoadButton" type="Button" parent="." index="2"]
 
@@ -102,6 +104,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_fonts/font = ExtResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -110,7 +113,7 @@ text = "Charger"
 flat = false
 align = 1
 script = SubResource( 4 )
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
 [node name="ExitButton" type="Button" parent="." index="3"]
 
@@ -130,6 +133,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_fonts/font = ExtResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -138,7 +142,7 @@ text = "Quitter"
 flat = false
 align = 1
 script = SubResource( 2 )
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
 [node name="OptionButton" type="Button" parent="." index="4"]
 
@@ -159,6 +163,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_fonts/font = ExtResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -167,7 +172,7 @@ text = "Options"
 flat = false
 align = 1
 script = SubResource( 3 )
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
 [connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_PlayButton_pressed"]
 
