@@ -8,6 +8,7 @@ func _ready():
 	player.level = 1
 	global.playerLife = 100
 	global.playerBall = 6
+	global.saveGame(1)
 
 func _process(delta):
 	camera.position = Vector2(player.position.x+200, player.position.y-100)
