@@ -15,7 +15,7 @@ func _on_PlayButton_pressed():
 	get_tree().change_scene(\"res://Scènes/Histoire.tscn\")
 "
 
-[sub_resource type="GDScript" id=4]
+[sub_resource type="GDScript" id=2]
 
 script/source = "extends Button
 
@@ -27,7 +27,7 @@ func _on_PlayButton_pressed():
 	global.loadGame()
 "
 
-[sub_resource type="GDScript" id=2]
+[sub_resource type="GDScript" id=3]
 
 script/source = "extends Button
 
@@ -38,7 +38,7 @@ func _on_ExitButton_pressed():
 	get_tree().quit()
 "
 
-[sub_resource type="GDScript" id=3]
+[sub_resource type="GDScript" id=4]
 
 script/source = "extends Button
 
@@ -112,7 +112,7 @@ group = null
 text = "Charger"
 flat = false
 align = 1
-script = SubResource( 4 )
+script = SubResource( 2 )
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
 [node name="ExitButton" type="Button" parent="." index="3"]
@@ -141,7 +141,7 @@ group = null
 text = "Quitter"
 flat = false
 align = 1
-script = SubResource( 2 )
+script = SubResource( 3 )
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
 [node name="OptionButton" type="Button" parent="." index="4"]
@@ -171,7 +171,7 @@ group = null
 text = "Options"
 flat = false
 align = 1
-script = SubResource( 3 )
+script = SubResource( 4 )
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
 [connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_PlayButton_pressed"]
