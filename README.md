@@ -1,4 +1,4 @@
-# Run and Shoot
+# Western Running
 
 A 2D Platformer / Shooter game made with Godot
 
